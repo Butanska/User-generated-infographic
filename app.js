@@ -40,8 +40,8 @@ getDinoData().then(data => {
       console.error(error);
     });
 
-console.log (dinosArray);
-console.log (dinosArray[0]);
+// console.log (dinosArray);
+// console.log (dinosArray[0]);
 
     // Create Human Object
 
@@ -65,7 +65,7 @@ document.getElementById('btn').addEventListener('click', (event)=>{
         human.weight = parseInt(document.getElementById('weight').value),
         human.diet = document.getElementById('diet').value.toLowerCase(),
         heightConverter(human.feet)
-    }());
+    })();
     console.log(human);
 
     dinosArray.forEach((dino) => {
