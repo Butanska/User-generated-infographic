@@ -19,7 +19,6 @@ function DinoConstructor([species, weight, height, diet, where, when, fact]) {
     this.image = 'images/' +species.toLowerCase()+ '.png';
     };
 
-
     // Create Dino Objects
 
 const dinosArray = [];
