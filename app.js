@@ -71,6 +71,7 @@ document.getElementById('btn').addEventListener('click', (event)=>{
         console.log(dino.relativeHeight(human));
         dino.heightFact = dino.relativeHeight(human);
       });
+    console.log (dinosArray);
 });
 
 
@@ -81,13 +82,17 @@ document.getElementById('btn').addEventListener('click', (event)=>{
     const humanHeight = human.height;
     const dinoHeight = this.height;
     if (humanHeight > dinoHeight) {
-        console.log (`${this.species} was shorter than you! It was ${this.height} tall.`)
+        // console.log (`${this.species} was shorter than you! It was ${this.height} tall.`);
+        return `${this.species} was shorter than you! It was ${this.height} tall.`
     } else if (humanHeight < dinoHeight) {
-        console.log (`${this.species} was taller than you! It was ${this.weight} tall.`)
+        // console.log (`${this.species} was taller than you! It was ${this.weight} tall.`);
+        return `${this.species} was taller than you! It was ${this.weight} tall.`
     } else if (humanHeight == dinoHeight) {
-        console.log (`${this.species} was exactly as tall as you are! Wow, you are a real ${this.species}!`)
+        // console.log (`${this.species} was exactly as tall as you are! Wow, you are a real ${this.species}!`);
+        return `${this.species} was exactly as tall as you are! Wow, you are a real ${this.species}!`
     } else {
-        console.log (`If you share how tall you are, we can tell you how you compare to our dinos.`)
+        // console.log (`If you share how tall you are, we can tell you how you compare to our dinos.`);
+        return `If you share how tall you are, we can tell you how you compare to our dinos.`
     }
 };
 
