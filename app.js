@@ -92,6 +92,8 @@ document.getElementById('btn').addEventListener('click', (event)=>{
     });
 
     removeForm();
+
+    createNewButton();
 });
 
 
@@ -183,12 +185,33 @@ function removeForm() {
 
 //Select random Dino fact to display
 
+// const randomProperty = function (obj) {
+//     const keys = Object.keys(obj);
+//     delete obj.image; 
+//     delete obj.species;
+//     console.log(obj);
+//     return obj[keys[ keys.length * Math.random() << 0]];
+// };
+
 const randomProperty = function (obj) {
-    const keys = Object.keys(obj);
-    delete obj.image; 
-    delete obj.species;
-    console.log(obj);
-    return obj[keys[ keys.length * Math.random() << 0]];
+    const Facts = ["fact", "weightFact", "heightFact", "dietFact", "when", "where"]
+    const oneRandomFact = Facts[Math.floor(Math.random() * Facts.length)] // get one of the values
+    return obj[oneRandomFact];
 };
+
+
+//Add button to reload the form
+
+const createNewButton = function (){
+    const newButton = document.createElement('div');
+    newButton.id = 'btn-reload';
+    newButton.innerHTML = `New Comparison!`; 
+    infographic.appendChild(newButton);
+    document.getElementById('btn-reload').addEventListener('click', (event)=>{
+        window.setTimeout(() => {
+            window.location.reload();
+        }, 200);
+    })
+}
 
 
