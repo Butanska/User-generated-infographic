@@ -65,10 +65,12 @@ document.getElementById('btn').addEventListener('click', (event)=>{
     })();
 
     dinosArray.forEach((dino) => {
-        console.log(dino.relativeHeight(human));
+        // console.log(dino.relativeHeight(human));
         dino.heightFact = dino.relativeHeight(human);
         dino.weightFact = dino.compareWeight(human);
-        dino.dietFact = dino.compareDiet(human)
+        dino.dietFact = dino.compareDiet(human);
+        dino.where = `The ${dino.species} lived in ${dino.where}.`;
+        dino.when = `The ${dino.species} lived in the ${dino.when}.`
       });
 
     const dinosArrayOne = dinosArray.slice (0,4);
