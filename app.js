@@ -1,4 +1,5 @@
     //Get Dino data from JSON
+
 const getDinoData = async () => {
     const fetchedData = await fetch("./dino.json");
     const data = await fetchedData.json();
@@ -29,10 +30,6 @@ getDinoData().then(data => {
         const dinoObj = new DinoConstructor([dino.species, dino.weight, dino.height, dino.diet, dino.where, dino.when, dino.fact]);
         dinosArray.push(dinoObj);
       });
-      
-    console.log (dinosArray);
-    
-    console.log(dinos);
 
     }).catch(error => {
       console.error(error);
@@ -51,8 +48,8 @@ function heightConverter(heightFeet) {
     human.height= Number(heightFeet*12) + Number(human.inches);
     };
 
-
 // On button click, prepare and display infographic
+
 document.getElementById('btn').addEventListener('click', (event)=>{
     // Use IIFE to get human data from form
     (function getHumanData (e) {
@@ -65,7 +62,6 @@ document.getElementById('btn').addEventListener('click', (event)=>{
     })();
 
     dinosArray.forEach((dino) => {
-        // console.log(dino.relativeHeight(human));
         dino.heightFact = dino.relativeHeight(human);
         dino.weightFact = dino.compareWeight(human);
         dino.dietFact = dino.compareDiet(human);
@@ -76,7 +72,6 @@ document.getElementById('btn').addEventListener('click', (event)=>{
     const dinosArrayOne = dinosArray.slice (0,4);
     const dinosArrayTwo = dinosArray.slice (4,8);
     const allSpeciesArray = dinosArrayOne.concat(human, dinosArrayTwo);
-    console.log(allSpeciesArray);
 
     // Add tiles to DOM
 
@@ -185,17 +180,9 @@ function removeForm() {
 
 //Select random Dino fact to display
 
-// const randomProperty = function (obj) {
-//     const keys = Object.keys(obj);
-//     delete obj.image; 
-//     delete obj.species;
-//     console.log(obj);
-//     return obj[keys[ keys.length * Math.random() << 0]];
-// };
-
 const randomProperty = function (obj) {
     const Facts = ["fact", "weightFact", "heightFact", "dietFact", "when", "where"]
-    const oneRandomFact = Facts[Math.floor(Math.random() * Facts.length)] // get one of the values
+    const oneRandomFact = Facts[Math.floor(Math.random() * Facts.length)] 
     return obj[oneRandomFact];
 };
 
