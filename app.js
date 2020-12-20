@@ -2,7 +2,6 @@
 const getDinoData = async () => {
     const fetchedData = await fetch("./dino.json");
     const data = await fetchedData.json();
-    // console.log(data.Dinos[0].fact);
     return data.Dinos;
   };
 
@@ -150,7 +149,8 @@ const createTiles = function (dino) {
     newTile.classList.add('grid-item');
     newTile.innerHTML = `<h3>${dino.species}</h3> 
     <img src= ${dino.image}>`;
-    newTile.innerHTML += `<p>${dino.fact}</p>`
+    const fact = randomProperty(dino);
+    newTile.innerHTML += `<p>${fact}</p>`
     infographic.appendChild(newTile);
 };
 
@@ -177,4 +177,16 @@ const dataForm = document.querySelector('#dino-compare');
 function removeForm() {
     dataForm.style.display = "none";
   };
+
+
+//Select random Dino fact to display
+
+const randomProperty = function (obj) {
+    const keys = Object.keys(obj);
+    delete obj.image; 
+    delete obj.species;
+    console.log(obj);
+    return obj[keys[ keys.length * Math.random() << 0]];
+};
+
 
