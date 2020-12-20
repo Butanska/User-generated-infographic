@@ -31,7 +31,7 @@ getDinoData().then(data => {
         dinosArray.push(dinoObj);
       });
       
-    console.log (dinosArray[0]);
+    console.log (dinosArray);
     
     console.log(dinos);
 
@@ -82,16 +82,12 @@ document.getElementById('btn').addEventListener('click', (event)=>{
     const humanHeight = human.height;
     const dinoHeight = this.height;
     if (humanHeight > dinoHeight) {
-        // console.log (`${this.species} was shorter than you! It was ${this.height} tall.`);
         return `${this.species} was shorter than you! It was ${this.height} tall.`
     } else if (humanHeight < dinoHeight) {
-        // console.log (`${this.species} was taller than you! It was ${this.weight} tall.`);
         return `${this.species} was taller than you! It was ${this.weight} tall.`
     } else if (humanHeight == dinoHeight) {
-        // console.log (`${this.species} was exactly as tall as you are! Wow, you are a real ${this.species}!`);
         return `${this.species} was exactly as tall as you are! Wow, you are a real ${this.species}!`
     } else {
-        // console.log (`If you share how tall you are, we can tell you how you compare to our dinos.`);
         return `If you share how tall you are, we can tell you how you compare to our dinos.`
     }
 };
